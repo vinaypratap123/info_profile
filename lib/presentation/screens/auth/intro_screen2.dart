@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:info_profile/utils/app_images.dart';
-import 'package:info_profile/utils/app_strings.dart';
+import 'package:info_profile/presentation/utils/app_images.dart';
+import 'package:info_profile/presentation/utils/app_strings.dart';
 
 class IntroScreen2 extends StatefulWidget {
   const IntroScreen2({super.key});

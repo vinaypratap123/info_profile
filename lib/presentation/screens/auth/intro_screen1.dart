@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:info_profile/utils/app_images.dart';
-import 'package:info_profile/utils/app_strings.dart';
+import 'package:info_profile/presentation/utils/app_images.dart';
+import 'package:info_profile/presentation/utils/app_strings.dart';
 
 class IntroScreen1 extends StatefulWidget {
   const IntroScreen1({super.key});
@@ -21,7 +21,7 @@ class _IntroScreen1State extends State<IntroScreen1> {
           const Padding(
             padding: EdgeInsets.all(20),
             child: Text(
-             AppString.connectWithThePeopleAroundYou,
+              AppString.connectWithThePeopleAroundYou,
               style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
             ),
           ),

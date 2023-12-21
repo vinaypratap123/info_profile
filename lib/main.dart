@@ -1,8 +1,8 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:info_profile/firebase_options.dart';
-import 'package:info_profile/routes/routes_name.dart';
-import 'package:info_profile/screens/auth/splash_screen.dart';
+import 'package:info_profile/presentation/routes/routes_name.dart';
+import 'package:info_profile/presentation/screens/auth/signup_screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -20,10 +20,10 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
         debugShowCheckedModeBanner: false,
         theme: ThemeData(
-          colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
           useMaterial3: true,
         ),
-        initialRoute: RoutesName.splashScreen,
-        home: const SplashScreen());
+        // initialRoute: RoutesName.splashScreen,
+        initialRoute: RoutesName.signup,
+        home: const SignupScreen());
   }
 }

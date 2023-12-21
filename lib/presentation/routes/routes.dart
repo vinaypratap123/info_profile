@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:info_profile/routes/routes_name.dart';
-import 'package:info_profile/screens/auth/splash_screen.dart';
-import 'package:info_profile/screens/auth/tutorial_screen.dart';
-import 'package:info_profile/utils/app_strings.dart';
+import 'package:info_profile/presentation/routes/routes_name.dart';
+import 'package:info_profile/presentation/screens/auth/signup_screen.dart';
+import 'package:info_profile/presentation/screens/auth/splash_screen.dart';
+import 'package:info_profile/presentation/screens/auth/tutorial_screen.dart';
+import 'package:info_profile/presentation/utils/app_strings.dart';
 
 class Routes {
   static Route<dynamic> generateRoute(RouteSettings settings) {
@@ -18,9 +19,9 @@ class Routes {
             builder: (BuildContext context) => const TutorialScreen());
 
 // ************ SIGNUP SCREEN ROUTE *******************
-      // case RoutesName.signup:
-      //   return MaterialPageRoute(
-      //       builder: (BuildContext context) => const SignUpScreen());
+      case RoutesName.signup:
+        return MaterialPageRoute(
+            builder: (BuildContext context) => const SignupScreen());
 
 // ************ VERIFY OTP SCREEN ROUTE *******************
       // case RoutesName.verifyOtp:

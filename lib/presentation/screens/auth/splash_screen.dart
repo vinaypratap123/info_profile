@@ -1,8 +1,8 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:info_profile/screens/auth/tutorial_screen.dart';
-import 'package:info_profile/utils/app_images.dart';
+import 'package:info_profile/presentation/screens/auth/tutorial_screen.dart';
+import 'package:info_profile/presentation/utils/app_images.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});

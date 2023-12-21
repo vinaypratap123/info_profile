@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:info_profile/screens/auth/intro_screen1.dart';
-import 'package:info_profile/screens/auth/intro_screen2.dart';
-import 'package:info_profile/screens/auth/intro_screen3.dart';
-import 'package:info_profile/screens/auth/login_screen.dart';
-import 'package:info_profile/utils/app_strings.dart';
+import 'package:info_profile/presentation/screens/auth/intro_screen1.dart';
+import 'package:info_profile/presentation/screens/auth/intro_screen2.dart';
+import 'package:info_profile/presentation/screens/auth/intro_screen3.dart';
+import 'package:info_profile/presentation/screens/auth/login_screen.dart';
+import 'package:info_profile/presentation/utils/app_strings.dart';
+import 'package:info_profile/presentation/widgets/common_widgets/buttons/bordered_button.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class TutorialScreen extends StatefulWidget {
@@ -61,29 +62,26 @@ class _TutorialScreenState extends State<TutorialScreen> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  InkWell(
-                    onTap: skipToLogin,
-                    child: const Text(
-                      AppString.skip,
-                    ),
-                  ),
+                  BorderedButton(
+                      buttonName: AppString.skip,
+                      onTap: skipToLogin,
+                      height: 30,
+                      width: 60),
                   SmoothPageIndicator(
                     controller: _controller,
                     count: 3,
                   ),
                   currentPageIndex == 2
-                      ? InkWell(
+                      ? BorderedButton(
+                          buttonName: AppString.done,
                           onTap: skipToLogin,
-                          child: const Text(
-                            AppString.done,
-                          ),
-                        )
-                      : InkWell(
+                          height: 30,
+                          width: 60)
+                      : BorderedButton(
+                          buttonName: AppString.next,
                           onTap: goToNextPage,
-                          child: const Text(
-                            AppString.next,
-                          ),
-                        ),
+                          height: 30,
+                          width: 60),
                 ],
               ),
             ),

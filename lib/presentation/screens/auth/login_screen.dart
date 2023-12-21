@@ -12,8 +12,9 @@ class _LoginScreenState extends State<LoginScreen> {
   Widget build(BuildContext context) {
     return const Scaffold(
       body: SafeArea(
-        child: Center(child: Text("login"),)
-        ),
+          child: Center(
+        child: Text("login"),
+      )),
     );
   }
 }
