@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:info_profile/presentation/routes/routes_name.dart';
+import 'package:info_profile/presentation/screens/auth/login_screen.dart';
 import 'package:info_profile/presentation/screens/auth/signup_screen.dart';
 import 'package:info_profile/presentation/screens/auth/splash_screen.dart';
 import 'package:info_profile/presentation/screens/auth/tutorial_screen.dart';
@@ -31,9 +32,9 @@ class Routes {
       //           ));
 
 // ************ LOGIN SCREEN ROUTE *******************
-      // case RoutesName.login:
-      //   return MaterialPageRoute(
-      //       builder: (BuildContext context) => const LoginScreen());
+      case RoutesName.login:
+        return MaterialPageRoute(
+            builder: (BuildContext context) => const LoginScreen());
 
 // ************ FORGOT PASSWORD SCREEN ROUTE *******************
       // case RoutesName.forgotPassword:

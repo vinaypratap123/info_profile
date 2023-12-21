@@ -1,7 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:info_profile/presentation/screens/auth/tutorial_screen.dart';
+import 'package:info_profile/presentation/routes/routes_name.dart';
 import 'package:info_profile/presentation/utils/app_images.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -16,8 +16,11 @@ class _SplashScreenState extends State<SplashScreen> {
   void initState() {
     super.initState();
     Timer(const Duration(seconds: 1), () {
-      Navigator.pushReplacement(context,
-          MaterialPageRoute(builder: (context) => const TutorialScreen()));
+      Navigator.pushNamedAndRemoveUntil(
+        context,
+        RoutesName.tutorialScreen,
+        (route) => false,
+      );
     });
   }
 

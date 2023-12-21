@@ -51,7 +51,12 @@ class _SignupScreenState extends State<SignupScreen> {
                             height: 60,
                             child: Image.asset(AppImage.circleLogo)),
                         SizedBox(
-                            height: 40,width: 200, child: Image.asset(AppImage.whiteNameLogo,fit: BoxFit.cover,)),
+                            height: 40,
+                            width: 200,
+                            child: Image.asset(
+                              AppImage.whiteNameLogo,
+                              fit: BoxFit.cover,
+                            )),
                       ],
                     ))),
             Positioned(
@@ -98,9 +103,9 @@ class _SignupScreenState extends State<SignupScreen> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           CustomTextFormField(
+                              hintText: AppString.enterYourName,
                               prefixIcon: const Icon(Icons.person_outlined),
                               controller: fullNameController,
-                              hintText: AppString.enterYourName,
                               validator: (value) {
                                 if (value!.isEmpty) {
                                   return "Please enter your name";
@@ -120,9 +125,10 @@ class _SignupScreenState extends State<SignupScreen> {
                               }),
                           const Gap(15),
                           CustomTextFormField(
+                              hintText: AppString.enterYourPassword,
+                              isPasswordField: true,
                               prefixIcon: const Icon(Icons.lock_outlined),
                               controller: passwordController,
-                              hintText: AppString.enterYourPassword,
                               validator: (value) {
                                 if (value!.isEmpty) {
                                   return "Please enter password";
@@ -144,25 +150,30 @@ class _SignupScreenState extends State<SignupScreen> {
               left: width * 0.2,
               right: width * 0.2,
               bottom: height * 0.1,
-              child: RichText(
-                text: const TextSpan(
-                  children: [
-                    TextSpan(
-                      text: 'Already have an account? ',
-                      style: TextStyle(
-                        fontSize: 16,
-                        color: Colors.black,
+              child: InkWell(
+                onTap: () {
+                  Navigator.pop(context);
+                },
+                child: RichText(
+                  text: const TextSpan(
+                    children: [
+                      TextSpan(
+                        text: AppString.alreadyHavenAnAccount,
+                        style: TextStyle(
+                          fontSize: 16,
+                          color: Colors.black,
+                        ),
                       ),
-                    ),
-                    TextSpan(
-                      text: AppString.login,
-                      style: TextStyle(
-                        fontSize: 16,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.blue,
+                      TextSpan(
+                        text: AppString.login,
+                        style: TextStyle(
+                          fontSize: 16,
+                          fontWeight: FontWeight.bold,
+                          color: AppColor.primaryColor,
+                        ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
               ),
             )

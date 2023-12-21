@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:info_profile/presentation/routes/routes_name.dart';
 import 'package:info_profile/presentation/screens/auth/intro_screen1.dart';
 import 'package:info_profile/presentation/screens/auth/intro_screen2.dart';
 import 'package:info_profile/presentation/screens/auth/intro_screen3.dart';
-import 'package:info_profile/presentation/screens/auth/login_screen.dart';
 import 'package:info_profile/presentation/utils/app_strings.dart';
 import 'package:info_profile/presentation/widgets/common_widgets/buttons/bordered_button.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
@@ -38,8 +38,11 @@ class _TutorialScreenState extends State<TutorialScreen> {
   }
 
   void skipToLogin() {
-    Navigator.push(
-        context, MaterialPageRoute(builder: (context) => const LoginScreen()));
+    Navigator.pushNamedAndRemoveUntil(
+      context,
+      RoutesName.login,
+      (route) => false,
+    );
   }
 
   @override
