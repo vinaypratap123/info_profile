@@ -47,6 +47,8 @@ dependencies:
   fluttertoast: ^8.2.4
   cached_network_image: ^3.3.0
   modal_bottom_sheet: ^2.1.2
+  community_material_icon: ^5.9.55
+  flutter_feather_icons: ^2.0.0+1
 
 dev_dependencies:
   flutter_test:

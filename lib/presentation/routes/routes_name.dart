@@ -26,14 +26,17 @@ class RoutesName {
   // ************ BOTTOM NAVBAR SCREEN ROUTE *******************
   static const String bottomNavbar = 'bottom_navbar_screen';
 
+  // ************ MAIN SCREEN ROUTE *******************
+  static const String mainScreen = 'main_screen';
+
   // ************ HOME SCREEN ROUTE *******************
-  static const String home = 'home_screen';
+  static const String homeScreen = 'home_screen';
 
   // ************ POST SCREEN ROUTE *******************
-  static const String post = 'post_screen';
+  static const String postScreen = 'post_screen';
 
   // ************ SEARCH SCREEN ROUTE *******************
-  static const String search = 'search_screen';
+  static const String searchScreen = 'search_screen';
 
   // ************ MY PROFILE SCREEN ROUTE *******************
   static const String myProfile = 'my_profile_screen';

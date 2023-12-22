@@ -4,6 +4,9 @@ import 'package:info_profile/presentation/screens/auth/login_screen.dart';
 import 'package:info_profile/presentation/screens/auth/signup_screen.dart';
 import 'package:info_profile/presentation/screens/auth/splash_screen.dart';
 import 'package:info_profile/presentation/screens/auth/tutorial_screen.dart';
+import 'package:info_profile/presentation/screens/home/home_screen.dart';
+import 'package:info_profile/presentation/screens/home/main_screen.dart';
+import 'package:info_profile/presentation/screens/home/search_screen.dart';
 import 'package:info_profile/presentation/utils/app_strings.dart';
 
 class Routes {
@@ -53,10 +56,15 @@ class Routes {
       //   return MaterialPageRoute(
       //       builder: (BuildContext context) => const BottomNavBarScreen());
 
+// ************ MAIN SCREEN ROUTE *******************
+      case RoutesName.mainScreen:
+        return MaterialPageRoute(
+            builder: (BuildContext context) => const MainScreen());
+
 // ************ HOME SCREEN ROUTE *******************
-      // case RoutesName.home:
-      //   return MaterialPageRoute(
-      //       builder: (BuildContext context) => HomeScreen());
+      case RoutesName.homeScreen:
+        return MaterialPageRoute(
+            builder: (BuildContext context) => const HomeScreen());
 
 // ************ POST SCREEN ROUTE *******************
       // case RoutesName.post:
@@ -64,9 +72,9 @@ class Routes {
       //       builder: (BuildContext context) => const PostScreen());
 
 // ************ SEARCH SCREEN ROUTE *******************
-      // case RoutesName.search:
-      //   return MaterialPageRoute(
-      //       builder: (BuildContext context) => const SearchScreen());
+      case RoutesName.searchScreen:
+        return MaterialPageRoute(
+            builder: (BuildContext context) => const SearchScreen());
 
 // ************ MY PROFILE SCREEN ROUTE *******************
       // case RoutesName.myProfile:
