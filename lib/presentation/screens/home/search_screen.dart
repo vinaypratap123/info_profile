@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:info_profile/presentation/utils/app_colors.dart';
+import 'package:info_profile/presentation/utils/app_strings.dart';
 
 class SearchScreen extends StatefulWidget {
   const SearchScreen({Key? key}) : super(key: key);
@@ -32,7 +32,7 @@ class _SearchScreenState extends State<SearchScreen> {
                         controller: null,
                         decoration: InputDecoration(
                           prefixIcon: const Icon(Icons.search_outlined),
-                          hintText: "Search",
+                          hintText: AppString.search,
                           contentPadding: const EdgeInsets.symmetric(
                               vertical: 2, horizontal: 16),
                           border: OutlineInputBorder(
@@ -55,7 +55,7 @@ class _SearchScreenState extends State<SearchScreen> {
                     return Container(
                       height: 100,
                       width: 100,
-                      color: AppColor.secondaryColor,
+                      color: Colors.blueGrey,
                     );
                   },
                   childCount: 100,

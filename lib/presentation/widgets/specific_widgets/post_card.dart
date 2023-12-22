@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_feather_icons/flutter_feather_icons.dart';
 import 'package:gap/gap.dart';
 import 'package:info_profile/presentation/utils/app_images.dart';
+import 'package:info_profile/presentation/utils/app_strings.dart';
 
 class PostCard extends StatefulWidget {
   const PostCard({super.key});
@@ -77,9 +78,9 @@ class _PostCardState extends State<PostCard> {
             padding: EdgeInsets.symmetric(horizontal: 20),
             child: Row(
               children: [
-                Text("View all "),
+                Text(AppString.viewAll),
                 Text("20 "),
-                Text("comments"),
+                Text(AppString.comments),
               ],
             ),
           )

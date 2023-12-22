@@ -31,10 +31,10 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
       body: ListView.builder(
         itemCount: 4,
-        itemBuilder:(context, index) {
+        itemBuilder: (context, index) {
           return const PostCard();
         },
-        ),
+      ),
     );
   }
 }
