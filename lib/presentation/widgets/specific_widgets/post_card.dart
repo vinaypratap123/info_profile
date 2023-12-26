@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_feather_icons/flutter_feather_icons.dart';
 import 'package:gap/gap.dart';
+import 'package:info_profile/presentation/routes/routes_name.dart';
+import 'package:info_profile/presentation/utils/app_colors.dart';
 import 'package:info_profile/presentation/utils/app_images.dart';
 import 'package:info_profile/presentation/utils/app_strings.dart';
 
@@ -28,7 +30,7 @@ class _PostCardState extends State<PostCard> {
               child: const Center(
                   child: Text(
                 "V",
-                style: TextStyle(fontSize: 30),
+                style: TextStyle(fontSize: 30, color: AppColor.white),
               )),
             ),
             title: const Text("Vinay pratap"),
@@ -53,21 +55,26 @@ class _PostCardState extends State<PostCard> {
             ),
           ),
           const Gap(10),
-          const Padding(
-            padding: EdgeInsets.symmetric(horizontal: 20),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 20),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Row(
                   children: [
-                    Icon(Icons.thumb_up_outlined),
-                    Gap(10),
-                    Icon(FeatherIcons.messageCircle),
-                    Gap(10),
-                    Icon(FeatherIcons.send),
+                    const Icon(Icons.thumb_up_outlined),
+                    const Gap(10),
+                    GestureDetector(
+                        onTap: () {
+                          Navigator.pushNamed(
+                              context, RoutesName.commentScreen);
+                        },
+                        child: const Icon(FeatherIcons.messageCircle)),
+                    const Gap(10),
+                    const Icon(FeatherIcons.send),
                   ],
                 ),
-                Row(
+                const Row(
                   children: [Icon(Icons.bookmark_border)],
                 ),
               ],

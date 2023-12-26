@@ -4,9 +4,11 @@ import 'package:info_profile/presentation/screens/auth/login_screen.dart';
 import 'package:info_profile/presentation/screens/auth/signup_screen.dart';
 import 'package:info_profile/presentation/screens/auth/splash_screen.dart';
 import 'package:info_profile/presentation/screens/auth/tutorial_screen.dart';
+import 'package:info_profile/presentation/screens/home/comment_screen.dart';
 import 'package:info_profile/presentation/screens/home/home_screen.dart';
 import 'package:info_profile/presentation/screens/home/main_screen.dart';
 import 'package:info_profile/presentation/screens/home/search_screen.dart';
+import 'package:info_profile/presentation/screens/user/edit_profile_screen.dart';
 import 'package:info_profile/presentation/utils/app_strings.dart';
 
 class Routes {
@@ -92,18 +94,14 @@ class Routes {
       //       builder: (BuildContext context) => const FollowingScreen());
 
 // ************ EDIT PROFILE SCREEN ROUTE *******************
-      // case RoutesName.editProfile:
-      //   final Map<String, dynamic> args =
-      //       settings.arguments as Map<String, dynamic>;
-      //   return MaterialPageRoute(
-      //       builder: (BuildContext context) =>
-      //           EditProfileScreen(userData: args));
+      case RoutesName.editProfile:
+        return MaterialPageRoute(
+            builder: (BuildContext context) => const EditProfileScreen());
 
 // ************ COMMENT ON POST SCREEN ROUTE *******************
-      // case RoutesName.commentOnPost:
-      //   return MaterialPageRoute(
-      //       builder: (BuildContext context) =>
-      //           CommentOnPostScreen(data: settings.arguments as Map));
+      case RoutesName.commentScreen:
+        return MaterialPageRoute(
+            builder: (BuildContext context) => const CommentScreen());
 
 // ************ NOTIFICATION SCREEN ROUTE *******************
       // case RoutesName.notificationListScreen:

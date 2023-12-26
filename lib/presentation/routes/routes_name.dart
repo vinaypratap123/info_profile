@@ -54,7 +54,7 @@ class RoutesName {
   static const String editProfile = 'edit_profile_screen';
 
   // ************ COMMENT ON  POST SCREEN ROUTE *******************
-  static const String commentOnPost = 'comment_on_post_screen';
+  static const String commentScreen = 'comment_screen';
 
   // ************ LIKE SCREEN ROUTE *******************
   static const String like = 'like_screen';

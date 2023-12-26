@@ -1,10 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:info_profile/presentation/screens/activity_screen.dart';
+import 'package:info_profile/presentation/screens/activity/activity_screen.dart';
 import 'package:info_profile/presentation/screens/home/add_post_screen.dart';
 import 'package:info_profile/presentation/screens/home/home_screen.dart';
 import 'package:info_profile/presentation/screens/home/search_screen.dart';
-import 'package:info_profile/presentation/screens/user/user_profile.dart';
+import 'package:info_profile/presentation/screens/user/user_profile_screen.dart';
 import 'package:info_profile/presentation/utils/app_colors.dart';
 
 class MainScreen extends StatefulWidget {
