@@ -11,6 +11,7 @@ class CommentScreen extends StatefulWidget {
 
 class _CommentScreenState extends State<CommentScreen> {
   bool isUserReplying = false;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -116,21 +117,31 @@ class _CommentScreenState extends State<CommentScreen> {
                               ),
                             ],
                           ),
-                          isUserReplying?const Gap(10):const Gap(0),
-                          isUserReplying?Column(
-                            crossAxisAlignment: CrossAxisAlignment.end,
-                            children: [
-                              Expanded(
-              child: TextFormField(
-            style: const TextStyle(color: AppColor.blackColor),
-            decoration: const InputDecoration(
-                border: InputBorder.none,
-                hintText: "Post Your Comment...",
-                hintStyle: TextStyle(color: AppColor.blackColor)),
-          )),
-                            ],
-                          ):const Gap(0),
-
+                          isUserReplying ? const Gap(10) : const Gap(0),
+                          isUserReplying
+                              ? Column(
+                                  crossAxisAlignment: CrossAxisAlignment.end,
+                                  children: [
+                                    TextFormField(
+                                      style: const TextStyle(
+                                          color: AppColor.blackColor),
+                                      decoration: const InputDecoration(
+                                          border: InputBorder.none,
+                                          hintText: "Post Your Comment...",
+                                          hintStyle: TextStyle(
+                                              color: AppColor.blackColor)),
+                                    ),
+                                    const Padding(
+                                      padding: EdgeInsets.only(right: 5),
+                                      child: Text(
+                                        "Post",
+                                        style: TextStyle(
+                                            color: AppColor.primaryColor),
+                                      ),
+                                    )
+                                  ],
+                                )
+                              : const Gap(0),
                         ],
                       ),
                     )
