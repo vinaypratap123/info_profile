@@ -20,28 +20,30 @@ class BorderedButton extends StatelessWidget {
     return InkWell(
       onTap: onTap,
       child: Container(
-          decoration: BoxDecoration(
-              border: Border.all(color: AppColor.secondaryColor),
-              borderRadius: BorderRadius.circular(10)),
-          height: height,
-          width: width,
-          child: buttonIcon != null && buttonName != null
-              ? Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    buttonIcon!,
-                    const SizedBox(
-                      width: 5,
-                    ),
-                    Text(buttonName!)
-                  ],
-                )
-              : buttonName != null
-                  ? Center(
-                      child: Text(
+        decoration: BoxDecoration(
+            border: Border.all(color: AppColor.secondaryColor),
+            borderRadius: BorderRadius.circular(10)),
+        height: height,
+        width: width,
+        child: buttonIcon != null && buttonName != null
+            ? Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  buttonIcon!,
+                  const SizedBox(
+                    width: 5,
+                  ),
+                  Text(buttonName!)
+                ],
+              )
+            : buttonName != null
+                ? Center(
+                    child: Text(
                       buttonName!,
-                    ))
-                  : Center(child: buttonIcon)),
+                    ),
+                  )
+                : Center(child: buttonIcon),
+      ),
     );
   }
 }

@@ -12,6 +12,7 @@ class UserEntity extends Equatable {
   final String? following;
   final num? totalFollowers;
   final num? totalFollowing;
+  final num? totalPosts;
   final String? password;
   final String? otherUid;
 
@@ -27,8 +28,9 @@ class UserEntity extends Equatable {
     this.following,
     this.totalFollowers,
     this.totalFollowing,
+    this.totalPosts,
     this.password,
-    this.otherUid,
+    this.otherUid, 
   );
 
   @override
@@ -44,6 +46,7 @@ class UserEntity extends Equatable {
         following,
         totalFollowers,
         totalFollowing,
+        totalPosts,
         password,
         otherUid,
       ];
