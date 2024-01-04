@@ -16,7 +16,7 @@ class UserEntity extends Equatable {
   final String? password;
   final String? otherUid;
 
-  const UserEntity(
+  const UserEntity({
     this.uid,
     this.name,
     this.userName,
@@ -30,8 +30,8 @@ class UserEntity extends Equatable {
     this.totalFollowing,
     this.totalPosts,
     this.password,
-    this.otherUid, 
-  );
+    this.otherUid,
+  });
 
   @override
   List<Object?> get props => [
