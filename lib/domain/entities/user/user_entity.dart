@@ -9,7 +9,7 @@ class UserEntity extends Equatable {
   final String? website;
   final String? profileUrl;
   final List? followers;
-  final String? following;
+  final List? following;
   final num? totalFollowers;
   final num? totalFollowing;
   final num? totalPosts;

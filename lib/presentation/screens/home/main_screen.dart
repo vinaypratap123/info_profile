@@ -8,7 +8,8 @@ import 'package:info_profile/presentation/screens/user/user_profile_screen.dart'
 import 'package:info_profile/presentation/utils/app_colors.dart';
 
 class MainScreen extends StatefulWidget {
-  const MainScreen({Key? key}) : super(key: key);
+  final String uid;
+  const MainScreen({Key? key, required this.uid}) : super(key: key);
 
   @override
   State<MainScreen> createState() => _MainScreenState();

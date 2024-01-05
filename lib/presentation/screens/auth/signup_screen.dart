@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gap/gap.dart';
+import 'package:info_profile/domain/entities/user/user_entity.dart';
+import 'package:info_profile/presentation/cubit/credential/credential_cubit.dart';
 import 'package:info_profile/presentation/utils/app_colors.dart';
 import 'package:info_profile/presentation/utils/app_images.dart';
 import 'package:info_profile/presentation/utils/app_strings.dart';
@@ -14,13 +17,25 @@ class SignupScreen extends StatefulWidget {
 }
 
 class _SignupScreenState extends State<SignupScreen> {
+  TextEditingController fullNameController = TextEditingController();
+  TextEditingController emailController = TextEditingController();
+  TextEditingController passwordController = TextEditingController();
+  TextEditingController aboutController = TextEditingController();
+  bool _isSigningIn = false;
+  @override
+  void dispose() {
+    super.dispose();
+    fullNameController.dispose();
+    emailController.dispose();
+    passwordController.dispose();
+    aboutController.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     final double height = MediaQuery.of(context).size.height;
     final double width = MediaQuery.of(context).size.width;
-    TextEditingController fullNameController = TextEditingController();
-    TextEditingController emailController = TextEditingController();
-    TextEditingController passwordController = TextEditingController();
+
     return Scaffold(
       body: SafeArea(
           child: SingleChildScrollView(
@@ -95,7 +110,7 @@ class _SignupScreenState extends State<SignupScreen> {
                   elevation: 2,
                   surfaceTintColor: AppColor.white,
                   child: SizedBox(
-                    height: height * 0.5,
+                    height: height * 0.6,
                     width: width * 0.9,
                     child: Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 10),
@@ -125,6 +140,17 @@ class _SignupScreenState extends State<SignupScreen> {
                               }),
                           const Gap(15),
                           CustomTextFormField(
+                              prefixIcon: const Icon(Icons.info_outline),
+                              controller: aboutController,
+                              hintText: "Enter your about",
+                              validator: (value) {
+                                if (value!.isEmpty) {
+                                  return "Please enter your about";
+                                }
+                                return null;
+                              }),
+                          const Gap(15),
+                          CustomTextFormField(
                               hintText: AppString.enterYourPassword,
                               isPasswordField: true,
                               prefixIcon: const Icon(Icons.lock_outlined),
@@ -138,7 +164,9 @@ class _SignupScreenState extends State<SignupScreen> {
                           const Gap(15),
                           RectangleButton(
                               btnName: AppString.signup,
-                              btnCallBack: () {},
+                              btnCallBack: () {
+                                _signup();
+                              },
                               height: 55,
                               width: width * 0.9)
                         ],
@@ -181,5 +209,38 @@ class _SignupScreenState extends State<SignupScreen> {
         ),
       )),
     );
+  }
+
+  void _signup() {
+    setState(() {
+      _isSigningIn = true;
+    });
+    BlocProvider.of<CredentialCubit>(context)
+        .signUpUser(
+            user: UserEntity(
+          email: emailController.text,
+          password: passwordController.text,
+          about: aboutController.text,
+          userName: fullNameController.text,
+          totalFollowers: 0,
+          totalFollowing: 0,
+          totalPosts: 0,
+          profileUrl: "",
+          followers: const [],
+          following: const [],
+          website: "",
+          name: "",
+        ))
+        .then((value) => _clear());
+  }
+
+  _clear() {
+    setState(() {
+      fullNameController.clear();
+      emailController.clear();
+      aboutController.clear();
+      passwordController.clear();
+      _isSigningIn = false;
+    });
   }
 }

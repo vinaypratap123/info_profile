@@ -50,6 +50,8 @@ dependencies:
   community_material_icon: ^5.9.55
   flutter_feather_icons: ^2.0.0+1
   bloc: ^8.1.2
+  get_it: ^7.6.4
+  flutter_bloc: ^8.1.3
 
 dev_dependencies:
   flutter_test:
